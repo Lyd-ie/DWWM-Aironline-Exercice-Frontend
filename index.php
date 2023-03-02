@@ -22,20 +22,20 @@
         <section>infos directions</section>
         <section>vignettes</section>
         <section>partenaires</section>
-        <section>
-            <div>
+        <section class="inscription redBG">
+            <div> 
                 <form action="POST" action="index.php">
 
                 <div>
-                    <input type="text" name="nom" placeholder="NOM du PARTICIPANT.......................................................................................................">
+                    <input class="nom" type="text" name="nom" placeholder="NOM du PARTICIPANT.......................................................................................................">
                 </div>
 
                 <div>
-                    <input type="text" name="prenom" placeholder="PRENOM............................................................................................ "><input type="text" name="age" placeholder="AGE........................">
+                    <input class="prenom" type="text" name="prenom" placeholder="PRENOM............................................................................................ "><input type="text" name="age" placeholder="AGE........................">
                 </div>
                 
                 <div>
-                    <input type="text" name="email" placeholder="Adresse mail..................................................................................@...............................">
+                    <input class="email" type="text" name="email" placeholder="Adresse mail..................................................................................@...............................">
                 </div>
                 
             </form>
