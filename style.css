@@ -1,3 +1,21 @@
 img {
     max-width: 200px;
 }
+
+.redBG{
+    background-color: #D21242;
+}
+
+.inscription{
+    width: 600px;
+    height: 700px;
+    left: 0px;
+    top: 0px;
+}
+
+.nom{
+    width: 430px;
+    height: 30px;
+    left: 59px;
+    top: 92.5px;
+}
