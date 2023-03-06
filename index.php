@@ -21,6 +21,20 @@ if(isset($_POST['valider'])) {
   // On récupère le nom saisi par le lecteur
   $name = $_POST['nom'];
 
+  // ON recupere les options choisis
+  $catDist = '0';
+  if(isset($_POST['catDist'])){
+    $catDist = $_POST['catDist'];
+  }
+ 
+  $catTDV = '0';
+  if(isset($_POST['catTDV'])){
+    $catTDV = $_POST['catTDV'];
+  }
+  $catVolt = '0';
+  if(isset($_POST['catVolt'])){
+    $catVolt = $_POST['catVolt'];
+  }
   // On récupère le prenom du lecteur
   $FirstName = $_POST['prenom'];
 
@@ -34,7 +48,8 @@ if(isset($_POST['valider'])) {
   $status = 1;
 
   // On prépare la requête d'insertion en base de données de toutes ces valeurs dans la table tblreaders
-  $query = $dbh->prepare("INSERT INTO inscription(LastName, FirstName, Age, Email, Status) VALUES (:LastName, :FirstName, :Age, :Email, :Status)");
+  $query = $dbh->prepare("INSERT INTO inscription(LastName, FirstName, Age, Email, Status, catDist, catTDV, catVolt)
+                          VALUES (:LastName, :FirstName, :Age, :Email, :Status, :catDist, :catTDV, :catVolt)");
 
   // On bind les paramètres
   $query->bindParam(':LastName', $name, PDO::PARAM_STR);
@@ -42,6 +57,9 @@ if(isset($_POST['valider'])) {
   $query->bindParam(':Age', $age, PDO::PARAM_INT);
   $query->bindParam(':Email', $email, PDO::PARAM_STR);
   $query->bindParam(':Status', $status, PDO::PARAM_INT);
+  $query->bindParam(':catDist', $catDist, PDO::PARAM_INT);
+  $query->bindParam(':catTDV', $catTDV, PDO::PARAM_INT);
+  $query->bindParam(':catVolt', $catVolt, PDO::PARAM_INT);
 
   // On éxecute la requête
   $query->execute();
@@ -174,15 +192,15 @@ if(isset($_POST['valider'])) {
 
                 <div>
                   <div>
-                    <input type="checkbox" name="catDist"><label for="catDist">Catégorie “DISTANCE”</label>
+                    <input  type="checkbox" name="catDist" value="1"><label for="catDist">Catégorie “DISTANCE”</label>
                   </div>
 
                   <div>  
-                    <input type="checkbox" name="catTDV"><label for="catTDV">Catégorie “TEMPS DE VOL”</label>
+                    <input type="checkbox" name="catTDV" value="1"><label for="catTDV">Catégorie “TEMPS DE VOL”</label>
                   </div>
 
                   <div>
-                    <input type="checkbox" name="catVolt"><label for="catVolt">Catégorie “VOLTIGE”</label>
+                    <input type="checkbox" name="catVolt" value="1"><label for="catVolt">Catégorie “VOLTIGE”</label>
                   </div>
 
                   <div>
@@ -190,7 +208,7 @@ if(isset($_POST['valider'])) {
                   </div>
 
                   <div>
-                    <input type="checkbox" name="CGU"><label for="CGU">j’accepte les conditions  d’utilisations</label>
+                    <input type="checkbox" name="CGU" required='required'><label for="CGU" >j’accepte les  <a href="./CGU.html" target="_blank">Conditions générales d'utilisation </a> </label>
                   </div>
                 </div>
 

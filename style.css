@@ -141,6 +141,12 @@ h1, h2, h3 {
     top: 92.5px;
 }
 
+
+ul, #titre{
+    list-style-type: none;
+    text-align: center;
+}
+
 /* FOOTER */
 
 footer {
@@ -153,3 +159,4 @@ footer div {
     display: flex;
     flex-direction: column;
 }
+
