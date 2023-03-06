@@ -8,7 +8,6 @@
 * {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
 }
 
 .redBG{
@@ -17,6 +16,10 @@
 
 .blackBG {
     background-color: #28292F;
+}
+
+.whiteBG {
+    background-color: white;
 }
 
 p {
@@ -44,7 +47,8 @@ h1, h2, h3 {
 .header {
     background-image: url('assets/photo_aeroport_rq.jpg');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
+    padding-bottom: 3vw;
 }
 
 .AO {
@@ -66,7 +70,7 @@ h1, h2, h3 {
 
 .page-title {
     text-align: center;
-    margin: 3.5vw;
+    margin: 3.7vw auto;
 }
 
 .page-title img {
@@ -77,6 +81,7 @@ h1, h2, h3 {
     text-align: center;
     width: 40vw;
     margin: 11.5vw auto;
+    padding-bottom: 1vw;
 }
 
 .decollage p {
@@ -88,37 +93,68 @@ h1, h2, h3 {
 .countdown {
     background-color: white;
     width: 36vw;
-    height: 10vw;
+    height: 8vw;
     margin: 0.5vw auto 1vw;
 }
 
 /* DISCIPLINES */
 
+.disciplines-title {
+    width: 15vw;
+    padding: 1vw;
+    margin: 0 auto;
+}
+.disciplines-title h3 {
+    color: white;
+    font-size: 2.5vw;
+}
 .disciplines {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
 }
 
 .disciplines div {
     background-color: white;
-    padding: 1%;
+    width: 23vw;
+    padding: 2vw 2vw 3vw;
     margin: 2% 3%;
 }
 
 .disciplines h2 {
     font-size: 3vw;
     text-align: left;
-    margin: 0;
 }
 
 .disciplines p {
+    font-size: 1vw;
+    margin: 1vw 0 0 0;
     color: #737373;
 }
 
 /* BOUTON INSCRIPTION */
 
-.bouton-inscription {
+.bouton-inscription{
+    padding: 6vw;
     text-align: center;
+}
+
+.bouton-inscription img {
+    position: absolute;
+    left: 26vw;
+    width: 15vw;
+}
+
+.bouton-inscription button {
+    padding: 1vw;
+    border-radius: 33px;
+    width: 11vw;
+    font-family: "Open Sans Condensed Bold";
+    font-size : 1.5vw;
+    color: white;
+    background-color: #D21242;
+    border: none;
+    margin-top: 2vw;
 }
 
 /* INFOS PRATIQUES ET ACCES */
@@ -127,6 +163,36 @@ h1, h2, h3 {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    padding: 3vw 3vw 6vw;
+}
+
+.infos h3 {
+    margin: 3vw 0 2vw;
+    font-size : 1.5vw;
+    color: #D21242;
+}
+
+.infos div {
+    margin: 0 auto;
+    width: 28vw;
+}
+
+.infos p {
+    margin: 1vw;
+    font-size: 1vw;
+    font-weight: 300;
+}
+
+.infos img {
+    max-width: 100%;
+}
+
+iframe {
+    border: solid 2px black;
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
 }
 
 /* VIGNETTES */
@@ -134,7 +200,24 @@ h1, h2, h3 {
 .vignettes {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 7vw;
+}
+
+.vignettes div {
+    width: 22vw;
+    border-radius: 0 0px 10px 10px;
+}
+
+.vignettes img {
+    max-width: 100%;
+}
+
+.vignettes p {
+    font-family: "Open Sans Condensed Bold";
+    font-size: 1.25vw;
+    padding: 0.5vw 1vw;
+    text-transform: uppercase;
 }
 
 /* PARTENAIRES */
@@ -145,10 +228,25 @@ h1, h2, h3 {
     justify-content: space-around;
 }
 
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.flex-row img {
+    height: 8vw;
+    margin: 1vw;
+}
+
 .flex-column {
     display: flex;
     flex-direction: column;
     text-align: center;
+}
+
+.flex-column img {
+    height: 3vw;
 }
 
 /* FORMULAIRE  */

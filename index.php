@@ -88,9 +88,7 @@ if(isset($_POST['valider'])) {
     </head>
     <body>
         <section class="header">
-            <div>
-                <img class="AO" src="assets/logos_aironline/logo2_fond_noir.svg" alt="logo Aironline">
-            </div>
+            <img class="AO" src="assets/logos_aironline/logo2_fond_noir.svg" alt="logo Aironline">
             <div class="logos">
                 <img src="assets/avions&icones/facebook.svg" alt="logo Facebook">
                 <img src="assets/avions&icones/instagram.svg" alt="logo Instagram">
@@ -101,11 +99,10 @@ if(isset($_POST['valider'])) {
             <div class="decollage blackBG">
                 <p>DECOLLAGE DANS</p>
                 <div class="countdown">COMPTE A REBOURS ICI</div>
-                <!-- COMPTE A REBOURS ICI -->
             </div>
         </section>
         <section>
-            <div class="blackBG">
+            <div class="disciplines-title blackBG">
                 <h3>DISCIPLINES</h3>
             </div>
             <div class="disciplines redBG">
@@ -126,7 +123,7 @@ if(isset($_POST['valider'])) {
                 </div>
         </section>
         <section class="bouton-inscription">
-            <img src="assets/avions&icones/avion2.svg" alt="avion en papier rouge">
+            <div><img src="assets/avions&icones/avion2.svg" alt="avion en papier rouge"></div>
             <button>INSCRIPTION</button>
         </section>
         <section class="infos">
@@ -135,16 +132,16 @@ if(isset($_POST['valider'])) {
                 <img src="assets/transport.jpg">
             </div>
             <div>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11179.95723420641!2d5.9588137!3d45.5304207!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478bafe5ed11b04b%3A0x6f854780ef28a4b6!2sOnlineformapro!5e0!3m2!1sfr!2sfr!4v1677831078898!5m2!1sfr!2sfr" width="450" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2794.9895402699312!2d5.95657511576848!3d45.53041603704324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478baeadf7664831%3A0x777d29b04260c513!2s110%20Rue%20des%20Tenettes%2C%2073190%20Saint-Baldoph!5e0!3m2!1sfr!2sfr!4v1678103364074!5m2!1sfr!2sfr" width="500" height="500" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div>
                 <h3>HORAIRE</h3>
-                <p>Enregistrement à partir de 10 h jusqu’à 12 h</p>
-                <p>1er lancé à 14 h pour les qualifications “ DISTANCE ”</p>
-                <p>1er lancé à 16 h pour les qualifications “ TEMPS DE VOL ”</p>
-                <p>1er lancé à 18 h pour les qualifications “ VOLTIGE ”</p>
-                <p>ANIMATIONS (enfants, ados, adultes) TOUTE LA JOURNEE</p>
-                <p>Restauration et rafraichissement sur place</p>
+                <p class>Enregistrement à partir de 10 h jusqu’à 12 h</p>
+                <p>1er lancé à 14 h pour les qualifications “ DISTANCE ” <br>
+                1er lancé à 16 h pour les qualifications “ TEMPS DE VOL ” <br>
+                1er lancé à 18 h pour les qualifications “ VOLTIGE ”</p>
+                <p>ANIMATIONS (enfants, ados, adultes) TOUTE LA JOURNEE <br>
+                Restauration et rafraichissement sur place</p>
                 <p>Toute sortie est définitive</p>
             </div>            
         </section>
@@ -163,7 +160,7 @@ if(isset($_POST['valider'])) {
             </div>
         </section>
         <section class="partenaires redBG">
-            <div>
+            <div class="flex-row">
                 <img src="assets/partenaires/chinaexpress.jpg" alt="China Express">
                 <img src="assets/partenaires/clairefontaine.jpg" alt="Clairefontaine">
                 <img src="assets/partenaires/douceurbio.jpg" alt="O'DouceurBio">
