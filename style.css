@@ -19,3 +19,8 @@ img {
     left: 59px;
     top: 92.5px;
 }
+
+ul, #titre{
+    list-style-type: none;
+    text-align: center;
+}
