@@ -7,7 +7,7 @@ define('DB_NAME','aironline');
 
 try
 {
-    // Connexion � la base
+    // Connexion a la base
     $dbh = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME,DB_USER, DB_PASS);
 }
 catch (PDOException $e)
@@ -89,16 +89,18 @@ if(isset($_POST['valider'])) {
     <body>
         <section class="header">
             <div>
-                <img src="assets/logos_aironline/logo2_fond_noir.svg" alt="logo Aironline">
+                <img class="AO" src="assets/logos_aironline/logo2_fond_noir.svg" alt="logo Aironline">
+            </div>
+            <div class="logos">
                 <img src="assets/avions&icones/facebook.svg" alt="logo Facebook">
                 <img src="assets/avions&icones/instagram.svg" alt="logo Instagram">
             </div>
-            <div class="page-title blackBG">
-                <h1>PAPER WINGS CHAMPIONSHIP</h1>
-                <img src="assets/logos_aironline/logo3_fond_noir.svg" alt="logo Aironline">
+            <div class="page-title">
+                <img src="assets/logos_aironline/nom_de_levent.svg" alt="Paperwings Championship by AirOnline">
             </div>
-            <div class="countdown blackBG">
+            <div class="decollage blackBG">
                 <p>DECOLLAGE DANS</p>
+                <div class="countdown">COMPTE A REBOURS ICI</div>
                 <!-- COMPTE A REBOURS ICI -->
             </div>
         </section>

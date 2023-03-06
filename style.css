@@ -8,10 +8,7 @@
 * {
     margin: 0;
     padding: 0;
-}
-
-img {
-    max-width: 200px;
+    overflow-x: hidden;
 }
 
 .redBG{
@@ -45,26 +42,54 @@ h1, h2, h3 {
 /* SECTION HEADER + COMPTE A REBOURS */
 
 .header {
-    background-image: url('assets/photo_aeroport.jpg');
+    background-image: url('assets/photo_aeroport_rq.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.page-title, .countdown {
+.AO {
+    width: 9vw;
+}
+
+.logos {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.logos img {
+    width: 5vw;
+    margin: 0.5vw;
+}
+
+.page-title {
     text-align: center;
-    width: 30%;
-    margin: 0 auto;
+    margin: 3.5vw;
 }
 
-.page-title h1 {
-    color: white;
-    font-size: 2.3vw;
+.page-title img {
+    width: 40vw;
 }
 
-.countdown p {
+.decollage {
+    text-align: center;
+    width: 40vw;
+    margin: 11.5vw auto;
+}
+
+.decollage p {
     color: #D21242;
     font-size: 2vw;
     font-weight: 700;
+}
+
+.countdown {
+    background-color: white;
+    width: 36vw;
+    height: 10vw;
+    margin: 0.5vw auto 1vw;
 }
 
 /* DISCIPLINES */
