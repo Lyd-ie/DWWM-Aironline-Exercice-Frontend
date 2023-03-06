@@ -1,3 +1,15 @@
+@font-face {
+    font-family: "Open Sans Condensed Bold";
+    src: url("assets/fonts/OpenSans-CondBold.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
 img {
     max-width: 200px;
 }
@@ -6,6 +18,115 @@ img {
     background-color: #D21242;
 }
 
+.blackBG {
+    background-color: #28292F;
+}
+
+p {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+a {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1, h2, h3 {
+    font-family: "Open Sans Condensed Bold";
+    font-weight: 300;
+    text-align: center;
+}
+
+/* SECTION HEADER + COMPTE A REBOURS */
+
+.header {
+    background-image: url('assets/photo_aeroport.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.page-title, .countdown {
+    text-align: center;
+    width: 30%;
+    margin: 0 auto;
+}
+
+.page-title h1 {
+    color: white;
+    font-size: 2.3vw;
+}
+
+.countdown p {
+    color: #D21242;
+    font-size: 2vw;
+    font-weight: 700;
+}
+
+/* DISCIPLINES */
+
+.disciplines {
+    display: flex;
+    flex-direction: row;
+}
+
+.disciplines div {
+    background-color: white;
+    padding: 1%;
+    margin: 2% 3%;
+}
+
+.disciplines h2 {
+    font-size: 3vw;
+    text-align: left;
+    margin: 0;
+}
+
+.disciplines p {
+    color: #737373;
+}
+
+/* BOUTON INSCRIPTION */
+
+.bouton-inscription {
+    text-align: center;
+}
+
+/* INFOS PRATIQUES ET ACCES */
+
+.infos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/* VIGNETTES */
+
+.vignettes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/* PARTENAIRES */
+
+.partenaires {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* FORMULAIRE  */
 .inscription{
     width: 600px;
     height: 700px;
@@ -18,4 +139,17 @@ img {
     height: 30px;
     left: 59px;
     top: 92.5px;
+}
+
+/* FOOTER */
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+footer div {
+    display: flex;
+    flex-direction: column;
 }
