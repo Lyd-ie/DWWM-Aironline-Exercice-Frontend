@@ -8,6 +8,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .redBG{
@@ -22,12 +23,7 @@
     background-color: white;
 }
 
-p {
-    font-family: 'Source Sans Pro', sans-serif;
-}
-
 a {
-    font-family: 'Source Sans Pro', sans-serif;
     color: white;
     text-decoration: none;
 }
@@ -250,25 +246,165 @@ iframe {
 }
 
 /* FORMULAIRE  */
+
 .inscription{
-    width: 600px;
-    height: 700px;
+    width: 750px;
+    height: 831px;
     left: 0px;
     top: 0px;
-}
+} 
+
 
 .nom{
-    width: 430px;
-    height: 30px;
-    left: 59px;
-    top: 92.5px;
+    width: 608px;
+    /* margin-left: 59px; */
+    margin-right: 60px;
+    margin-bottom: 15px;
+    margin-top: 94px;
 }
+
+
+
+.email{
+    width: 608px;
+    /* margin-left: 59px; */
+    margin-right: 60px;
+   
+}
+.prenom{
+    width:439px ;
+    /* margin-left: 59px; */
+    margin-right: 15px;
+    margin-bottom: 15px;
+    
+}
+.age{
+    width: 150px;
+    margin-right: 60px;
+    margin-bottom: 15px;
+}
+
+
 
 
 ul, #titre{
     list-style-type: none;
     text-align: center;
 }
+
+.formulaire {
+    display: grid;
+    grid-template-areas: 
+    "input input input input"
+    "checkbox checkbox image image"
+    "button button button button";
+    padding-top: 92.5;
+}
+
+.input{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    grid-area: input;
+    margin-left: 59px;
+    width: 726px;
+    height: 361px;
+}
+input[type="text"]{
+    font-size: 20px;
+    height: 54px;
+    border: solid black 1px;
+}
+input[type="checkbox"]{
+    width: 32px;
+    height: 32px;
+    outline: solid black 1px;
+}
+
+input{
+    
+}
+
+label{
+    font-size: 16px;
+    margin-left: 11px;
+    padding-bottom: 2px;
+    color: white;
+}
+
+.catDist{
+    /* margin-top: 73px; */
+    margin-bottom: 16px;
+}
+
+.catTDV{
+    margin-bottom: 16px;
+}
+
+.catVolt{
+    margin-bottom: 52px;
+}
+
+.autoMail{
+    margin-bottom: 52px;
+}
+
+
+.checkbox{
+    display: inline-flex;
+    flex-direction: column;
+    grid-area: checkbox;
+    margin-left: 70px;
+    margin-top: 11px;
+    width: 360px;
+}
+
+.checkbox div{
+    display: flex;
+    align-items: center;
+    
+    
+    /* margin:  70px; */
+}
+
+.image{
+    grid-area: image;
+    margin-top: 70px;
+    padding-right: 75px;
+    
+    
+}
+
+.button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    grid-area: button;
+    margin-top: 26px;
+    width: 726px;
+    height:100px ;
+    
+}
+
+.button button{
+    width: 210px;
+    height: 63px;
+    background-color: white;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+#retour{
+    margin-left: 40px;
+    border: solid black 1px;
+}
+
+.valider{
+    border: solid black 1px;
+}
+
+
 
 /* FOOTER */
 

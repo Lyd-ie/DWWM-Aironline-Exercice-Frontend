@@ -171,60 +171,60 @@ if(isset($_POST['valider'])) {
                 <img src="assets/partenaires/aeroport.jpg" alt="Aéroport">
             </div>
         </section>
-        <section class="inscription redBG">
-          <div> 
-            <form method="POST" action="index.php">
+        <section class="inscription redBG ">
+          
+            <form class="formulaire" method="POST" action="index.php">
 
-                <div>
-                  <div>
+                <div class="input">
+                    
                       <input class="nom" type="text" name="nom" placeholder="NOM du PARTICIPANT......................................................................................................." required>
-                  </div>
+                    
 
-                  <div>
+                    <div>
                       <input class="prenom" type="text" name="prenom" placeholder="PRENOM............................................................................................ "required><input class="age" type="text" name="age" placeholder="AGE........................" required>
-                  </div>
+                    </div>
                 
-                  <div>
+                  
                       <input class="email" type="text" name="email" placeholder="Adresse mail..................................................................................@..............................."required>
-                  </div>
+                  
                 </div>
 
-                <div>
-                  <div>
+                <div class="checkbox">
+
+                  <div class="catDist">
                     <input  type="checkbox" name="catDist" value="1"><label for="catDist">Catégorie “DISTANCE”</label>
                   </div>
 
-                  <div>  
+                  <div class="catTDV">
                     <input type="checkbox" name="catTDV" value="1"><label for="catTDV">Catégorie “TEMPS DE VOL”</label>
                   </div>
 
-                  <div>
+                  <div class="catVolt">
                     <input type="checkbox" name="catVolt" value="1"><label for="catVolt">Catégorie “VOLTIGE”</label>
                   </div>
 
-                  <div>
+                  <div class="autoMail">
                     <input type="checkbox" name="autoMail"><label for="autoMail">Rappel automatique par mail</label>
                   </div>
 
-                  <div>
+                  <div class="CGU">
                     <input type="checkbox" name="CGU" required='required'><label for="CGU" >j’accepte les  <a href="./CGU.html" target="_blank">Conditions générales d'utilisation </a> </label>
                   </div>
+
                 </div>
 
-                <div>
-                  <img src="./assets/avions&icones/avion1.svg" alt="avion en papier">
-                </div>
+               
+                  <img class="image" src="./assets/avions&icones/avion1.svg" alt="avion en papier">
+                
 
-                <div>
-                  <button type="submit" name="valider">VALIDER</button>
+                <div class="button">
+                  <button id="retour" type="submit" name="retour">RETOUR</button>
+
+                  <button class="valider" type="submit" name="valider">VALIDER</button>
                 </div>
 
             </form>
-
-              <div>
-                <button id="retour" type="submit" name="retour">RETOUR</button>
-              </div>
-            </div>
+          
 
 </section>
         <footer class="blackBG">
@@ -248,12 +248,12 @@ if(isset($_POST['valider'])) {
           <footer>footer</footer>
 
           <script>
-        let retour = document.getElementById('retour');
-        function goodBye() {
-          alert("Désolé de vous voir partir");
-        }
-        retour.addEventListener("click", goodBye);
-      </script>
+            let retour = document.getElementById('retour');
+            function goodBye() {
+            alert("Désolé de vous voir partir");
+            }
+            retour.addEventListener("click", goodBye);
+          </script>
       </body>
     
 </HTML>
