@@ -5,6 +5,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: "MADE TOMMY Bold";
+    src: url("assets/fonts/MADE-TOMMY-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -76,21 +83,40 @@ h1, h2, h3 {
 .decollage {
     text-align: center;
     width: 40vw;
-    margin: 11.5vw auto;
-    padding-bottom: 1vw;
+    margin: 11.5vw auto 10vw;
+    padding-bottom: 0.5vw;
+}
+
+.decollage h4 {
+    color: #D21242;
+    font-family: 'Open Sans', 'Source Sans Pro', sans-serif;
+    font-weight: 700;
+    font-size: 2vw;
 }
 
 .decollage p {
-    color: #D21242;
-    font-size: 2vw;
+    color: white;
+    font-family: 'Open Sans', 'Source Sans Pro', sans-serif;
     font-weight: 700;
+    font-size: 0.8vw;
 }
 
-.countdown {
+#countdown {
+    display: flex;
+    flex-direction: row;
+}
+
+.jours, .heures, .minute, .secondes {
+    margin: 0.5vw 1vw;
+}
+
+#days, #hours, #minutes, #seconds {
     background-color: white;
-    width: 36vw;
+    width: 8vw;
     height: 8vw;
-    margin: 0.5vw auto 1vw;
+    margin: 0.5vw auto 0.5vw;
+    font-family: "MADE TOMMY Bold";
+    font-size: 6vw;
 }
 
 /* DISCIPLINES */
@@ -139,6 +165,14 @@ h1, h2, h3 {
     position: absolute;
     left: 26vw;
     width: 15vw;
+}
+
+button {
+    font-family: "Open Sans Condensed Bold";
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 .bouton-inscription button {
@@ -251,7 +285,7 @@ iframe {
 
 /* FORMULAIRE  */
 
-.overlay {
+.overlay1, .overlay2, .overlay3 {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -267,132 +301,93 @@ iframe {
 .popup {
     position: relative;
     border-radius: 5px;
-    margin: 5% auto;
-    padding: 5%;
+    margin: 2% auto;
 }
 
 .inscription{
-    width: 750px;
-    height: 831px;
-    left: 0px;
-    top: 0px;
-} 
-
-
-.nom{
-    width: 608px;
-    /* margin-left: 59px; */
-    margin-right: 60px;
-    margin-bottom: 15px;
-    margin-top: 94px;
-}
-
-
-
-.email{
-    width: 608px;
-    /* margin-left: 59px; */
-    margin-right: 60px;
-   
-}
-.prenom{
-    width:439px ;
-    /* margin-left: 59px; */
-    margin-right: 15px;
-    margin-bottom: 15px;
-    
-}
-.age{
-    width: 150px;
-    margin-right: 60px;
-    margin-bottom: 15px;
-}
-
-
-
-
-ul, #titre{
-    list-style-type: none;
-    text-align: center;
+    width: 40vw;
+    height: 90vh;
 }
 
 .formulaire {
-    display: grid;
+    width: 40vw;
+    padding: 5% 3%;
+    /* display: grid;
     grid-template-areas: 
     "input input input input"
     "checkbox checkbox image image"
-    "button button button button";
-    padding-top: 92.5;
+    "button button button button"; */
 }
 
 .input{
     display: flex;
     flex-direction: column;
     align-items: baseline;
-    grid-area: input;
-    margin-left: 59px;
-    width: 726px;
-    height: 361px;
+    padding-left: 1vw;
+    /* grid-area: input; */
+    margin-bottom: 4%;
 }
-input[type="text"]{
-    font-size: 20px;
-    height: 54px;
+
+.prenom-age {
+    display: flex;
+    flex-direction: row;
+    width: 90.5%;
+    padding: 0vw 3.6vw 0vw 0vw;
+}
+
+.text, .age {
+    margin: 0.5vw;
+    width: 88%;
+    box-sizing: border-box;
+    padding: 0.8vw;
+    font-size: 1.1vw;
     border: solid black 1px;
 }
+
+.age {
+    margin-right: 0.5;
+    width: 30%;
+}
+
+ul, #titre{
+    list-style-type: none;
+    text-align: center;
+}
+
 input[type="checkbox"]{
-    width: 32px;
-    height: 32px;
+    width: 2vw;
+    height: 2vw;
     outline: solid black 1px;
 }
 
-label{
-    font-size: 16px;
-    margin-left: 11px;
-    padding-bottom: 2px;
-    color: white;
+.checkbox-img {
+    margin-left: 2vw;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-content: space-around;
 }
 
-.catDist{
-    /* margin-top: 73px; */
-    margin-bottom: 16px;
-}
-
-.catTDV{
-    margin-bottom: 16px;
-}
-
-.catVolt{
-    margin-bottom: 52px;
-}
-
-.autoMail{
-    margin-bottom: 52px;
-}
-
-
-.checkbox{
-    display: inline-flex;
-    flex-direction: column;
-    grid-area: checkbox;
-    margin-left: 70px;
-    margin-top: 11px;
-    width: 360px;
+.image {
+    grid-area: image;
+    width: 40%;
 }
 
 .checkbox div{
     display: flex;
     align-items: center;
-    
-    
-    /* margin:  70px; */
+    margin: 1vw;
 }
 
-.image{
-    grid-area: image;
-    margin-top: 70px;
-    padding-right: 75px;
-    
-    
+label{
+    font-size: 1vw;
+    margin-left: 1vw;
+    padding-bottom: 2px;
+    color: white;
+}
+
+.automail, .CGU {
+    margin-bottom: 5vw;
 }
 
 .button{
@@ -401,29 +396,49 @@ label{
     justify-content: space-between;
     align-items: flex-end;
     grid-area: button;
-    margin-top: 26px;
-    width: 726px;
-    height:100px ;
-    
+    margin-top: 2vw;
+    padding-left: 2vw;
+    padding-right: 4vw;
 }
 
 .button button{
-    width: 210px;
-    height: 63px;
+    width: 30%;
     background-color: white;
+    font-size: 1.2vw;
+    padding: 1vw;
+    border: solid black 1px;
+}
+
+.ok-goodbye{
+    position: relative;
+    border-radius: 5px;
+    margin: 15% auto;
+    width: 40vw;
+    padding: 5vw;
+    font-size: 2vw;
+    color: white;
+    text-align: center;
+}
+
+.ok-goodbye a {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2vw;
     font-weight: bold;
-    font-size: 24px;
 }
 
-#retour{
-    margin-left: 40px;
-    border: solid black 1px;
+.ok-goodbye a:hover {
+    cursor: pointer;
+    text-decoration: none;
 }
 
-.valider{
-    border: solid black 1px;
+.ok-goodbye img {
+    width: 20%;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
 }
-
 
 
 /* FOOTER */
@@ -432,9 +447,20 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    padding: 4vw 5vw 2vw 15vw;
 }
 
 footer div {
     display: flex;
     flex-direction: column;
+    margin-top: 2vw;
+    font-size: 1vw;
 }
+
+footer img {
+    padding-left: 5vw;
+    width: 20%;
+}
+
+/* FLIPCLOCK */
+
