@@ -1,79 +1,4 @@
-<?php 
-// Configuration de la connexion
-define('DB_HOST','localhost');
-define('DB_USER','root');
-define('DB_PASS','root');
-define('DB_NAME','aironline');
 
-try
-{
-    // Connexion a la base
-    $dbh = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME,DB_USER, DB_PASS);
-}
-catch (PDOException $e)
-{
-	// Echec de la connexion
-    exit("Error: " . $e->getMessage());
-}
-
-if(isset($_POST['valider'])) {
-
-  // On récupère le nom saisi par le lecteur
-  $name = $_POST['nom'];
-
-  // ON recupere les options choisis
-  $catDist = '0';
-  if(isset($_POST['catDist'])){
-    $catDist = $_POST['catDist'];
-  }
- 
-  $catTDV = '0';
-  if(isset($_POST['catTDV'])){
-    $catTDV = $_POST['catTDV'];
-  }
-  $catVolt = '0';
-  if(isset($_POST['catVolt'])){
-    $catVolt = $_POST['catVolt'];
-  }
-  // On récupère le prenom du lecteur
-  $FirstName = $_POST['prenom'];
-
-  // On récupère l'age du lecteur
-  $age = $_POST['age'];
-
-  // On récupère l'email
-  $email = $_POST['email'];
-
-  // On fixe le statut du lecteur à 1 par défaut (actif)
-  $status = 1;
-
-  // On prépare la requête d'insertion en base de données de toutes ces valeurs dans la table tblreaders
-  $query = $dbh->prepare("INSERT INTO inscription(LastName, FirstName, Age, Email, Status, catDist, catTDV, catVolt)
-                          VALUES (:LastName, :FirstName, :Age, :Email, :Status, :catDist, :catTDV, :catVolt)");
-
-  // On bind les paramètres
-  $query->bindParam(':LastName', $name, PDO::PARAM_STR);
-  $query->bindParam(':FirstName', $FirstName, PDO::PARAM_STR );
-  $query->bindParam(':Age', $age, PDO::PARAM_INT);
-  $query->bindParam(':Email', $email, PDO::PARAM_STR);
-  $query->bindParam(':Status', $status, PDO::PARAM_INT);
-  $query->bindParam(':catDist', $catDist, PDO::PARAM_INT);
-  $query->bindParam(':catTDV', $catTDV, PDO::PARAM_INT);
-  $query->bindParam(':catVolt', $catVolt, PDO::PARAM_INT);
-
-  // On éxecute la requête
-  $query->execute();
-
-  // On récupère le dernier id inséré en bd (fonction lastInsertId)
-  $last_id = $dbh->lastInsertId();
-
-  //POPUP DE RETOUR, alert provisoir pour test
-  if($last_id) {
-    echo '<script>alert("Merci pour votre inscription,Rendez-vous le 26 avril à l’aéroport");</script>';
-} 
-}
-
-?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -82,9 +7,10 @@ if(isset($_POST['valider'])) {
         <title>AIR ONLINE - Paper Wings Championship</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
         <link type="text/css" rel="stylesheet" href="style.css">
-        <link rel="shortcut icon" href="" type="image/x-icon">
+        <link rel="shortcut icon" href="assets/logos_aironline/logo2_fond_noir.svg" type="image/x-icon">
     </head>
     <body>
         <section class="header">
@@ -97,8 +23,25 @@ if(isset($_POST['valider'])) {
                 <img src="assets/logos_aironline/nom_de_levent.svg" alt="Paperwings Championship by AirOnline">
             </div>
             <div class="decollage blackBG">
-                <p>DECOLLAGE DANS</p>
-                <div class="countdown">COMPTE A REBOURS ICI</div>
+                <h4>DECOLLAGE DANS</h4>
+                <div id="countdown">
+                    <div class="jours"> 
+                        <div id="days"></div>
+                        <p>JOURS</p>
+                    </div>
+                    <div class="heures">
+                        <div id="hours"></div>
+                        <p>HEURES</p>
+                    </div>
+                    <div class="minute">
+                        <div id="minutes"></div>
+                        <p>MINUTES</p>
+                    </div>
+                    <div class="secondes">
+                        <div id="seconds"></div>
+                        <p>SECONDES</p>
+                    </div>
+                </div>
             </div>
         </section>
         <section>
@@ -171,81 +114,165 @@ if(isset($_POST['valider'])) {
                 <img id="chambery" src="assets/partenaires/aeroport.jpg" alt="Aéroport">
             </div>
         </section>
-        <section id="target" class="overlay">
-            <div class="popup inscription redBG ">
-                <form class="formulaire" method="POST" action="index.php">
-                    <div class="input">
-                        <input class="nom" type="text" name="nom" placeholder="NOM du PARTICIPANT......................................................................................................." required>
-                        <div>
-                            <input class="prenom" type="text" name="prenom" placeholder="PRENOM............................................................................................ "required>
-                            <input class="age" type="text" name="age" placeholder="AGE........................" required>
+        <section>
+            <div id="target" class="overlay1">
+                <div class="popup inscription redBG ">
+                    <form class="formulaire" method="POST" action="index.php">
+                        <div class="input">
+                            <input class="text" type="text" name="nom" placeholder="NOM du PARTICIPANT......................................................................................................." required>
+                            <div class="prenom-age">
+                                <input class="text" type="text" name="prenom" placeholder="PRENOM............................................................................................ "required>
+                                <input class="age" type="text" name="age" placeholder="AGE........................" required>
+                            </div>
+                            <input class="text" type="text" name="email" placeholder="Adresse mail............................................................@..............................."required>
                         </div>
-                        <input class="email" type="text" name="email" placeholder="Adresse mail..................................................................................@..............................."required>
+                        <div class="checkbox-img">
+                            <div class="checkbox">
+                                <div class="catDist">
+                                    <input  type="checkbox" name="catDist" value="1">
+                                    <label for="catDist">Catégorie “DISTANCE”</label>
+                                </div>
+                                <div class="catTDV">
+                                    <input type="checkbox" name="catTDV" value="1">
+                                    <label for="catTDV">Catégorie “TEMPS DE VOL”</label>
+                                </div>
+                                <div class="catVolt">
+                                    <input type="checkbox" name="catVolt" value="1">
+                                    <label for="catVolt">Catégorie “VOLTIGE”</label>
+                                </div>
+                                <div></div>
+                                <div class="autoMail">
+                                    <input type="checkbox" name="autoMail">
+                                    <label for="autoMail">Rappel automatique par mail</label>
+                                </div>
+                                <div></div>
+                                <div class="CGU">
+                                    <input type="checkbox" name="CGU" value="4" required>
+                                    <label for="CGU" >J’accepte les <a href="./CGU.html" target="_blank">Conditions d'utilisation </a></label>
+                                </div>
+                            </div>
+                            <img class="image" src="./assets/avions&icones/avion1.svg" alt="avion en papier">
+                        </div>
+                        <div class="button">
+                            <button id="retour" name="retour">RETOUR</button>
+                            <button class="valider" type="submit" name="valider">VALIDER</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="overlay2">
+                <div class="ok-goodbye redBG ">
+                    <a class="close2">&times;</a>
+                    <div class="content">
+                        Désolés de vous voir partir
                     </div>
-                    <div class="checkbox">
-                        <div class="catDist">
-                            <input  type="checkbox" name="catDist" value="1">
-                            <label for="catDist">Catégorie “DISTANCE”</label>
-                        </div>
-                        <div class="catTDV">
-                            <input type="checkbox" name="catTDV" value="1">
-                            <label for="catTDV">Catégorie “TEMPS DE VOL”</label>
-                        </div>
-                        <div class="catVolt">
-                            <input type="checkbox" name="catVolt" value="1">
-                            <label for="catVolt">Catégorie “VOLTIGE”</label>
-                        </div>
-                        <div class="autoMail">
-                            <input type="checkbox" name="autoMail">
-                            <label for="autoMail">Rappel automatique par mail</label>
-                        </div>
-                        <div class="CGU">
-                            <input type="checkbox" name="CGU" required='required'>
-                            <label for="CGU" >J’accepte les <a href="./CGU.html" target="_blank">Conditions générales d'utilisation </a></label>
-                        </div>
+                    <img src="assets/avions&icones/avion3.svg" alt="avion en papier blanc">
+                </div>
+            </div>
+            <div class="overlay3">
+                <div class="ok-goodbye redBG ">
+                    <a class="close3" href=#>&times;</a>
+                    <div class="content">
+                        Merci pour votre inscription, <br>
+                        Rendez-vous le 26 avril à l’aéroport
                     </div>
-                    <img class="image" src="./assets/avions&icones/avion1.svg" alt="avion en papier">
-                    <div class="button">
-                        <button id="retour" type="submit" name="retour">RETOUR</button>
-                        <button class="valider" type="submit" name="valider">VALIDER</button>
-                    </div>
-                </form>
+                    <img src="assets/avions&icones/avion3.svg" alt="avion en papier blanc">
+                </div>
             </div>
         </section>
         <footer class="blackBG">
             <div>
-                <a href=#>Configuration des cookies</a>
-                <a href=#>Politique de confidentialité</a>
-                <a href=#>Mentions légales</a>
+                <a>Configuration des cookies</a>
+                <a>Politique de confidentialité</a>
+                <a>Mentions légales</a>
             </div>
             <div>
-                <a href=#>Contactez-nous</a>
-                <a href=#>Conditions Générales</a>
-                <a href=#>Médias</a>
+                <a>Contactez-nous</a>
+                <a href=http://localhost/online_formapro/projet_aironline/CGU.html target="_blank">Conditions Générales</a>
+                <a>Médias</a>
             </div>
-            <div>
-                <img src="assets/avions&icones/avion2.svg" alt="avion en papier rouge">
-            </div>
+            <img src="assets/avions&icones/avion2.svg" alt="avion en papier rouge">
         </footer>
     </body>
+    <script src="main.js" type="text/javascript"></script>
+    <?php 
+        // Configuration de la connexion
+        define('DB_HOST','localhost');
+        define('DB_USER','root');
+        define('DB_PASS','root');
+        define('DB_NAME','aironline');
 
-          <script>
+        try
+        {
+            // Connexion a la base
+            $dbh = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME,DB_USER, DB_PASS);
+        }
+        catch (PDOException $e)
+        {
+            // Echec de la connexion
+            exit("Error: " . $e->getMessage());
+        }
 
-            let boutonInscription = document.getElementById("boutonInscription");
-            let overlay = document.querySelector(".overlay");
-            boutonInscription.addEventListener("click", () => {
-                overlay.style.visibility = "visible";
-                overlay.style.opacity = "1";
+        if(isset($_POST['valider'])) {
+
+            // On récupère le nom saisi par le lecteur
+            $name = $_POST['nom'];
+
+            // ON recupere les options choisis
+            $catDist = '0';
+            if(isset($_POST['catDist'])) {
+                $catDist = $_POST['catDist'];
             }
+            
+            $catTDV = '0';
+            if(isset($_POST['catTDV'])) {
+                $catTDV = $_POST['catTDV'];
+            }
+            $catVolt = '0';
+            if(isset($_POST['catVolt'])) {
+                $catVolt = $_POST['catVolt'];
+            }
+            // On récupère le prenom du lecteur
+            $FirstName = $_POST['prenom'];
 
-            )
-            // let retour = document.getElementById('retour');
-            // function goodBye() {
-            // alert("Désolé de vous voir partir");
-            // }
-            // retour.addEventListener("click", goodBye);
-          </script>
-      </body>
+            // On récupère l'age du lecteur
+            $age = $_POST['age'];
 
-    
+            // On récupère l'email
+            $email = $_POST['email'];
+
+            // On fixe le statut du lecteur à 1 par défaut (actif)
+            $status = 1;
+
+            // On prépare la requête d'insertion en base de données de toutes ces valeurs dans la table tblreaders
+            $query = $dbh->prepare("INSERT INTO inscription(LastName, FirstName, Age, Email, Status, catDist, catTDV, catVolt)
+                                    VALUES (:LastName, :FirstName, :Age, :Email, :Status, :catDist, :catTDV, :catVolt)");
+
+            // On bind les paramètres
+            $query->bindParam(':LastName', $name, PDO::PARAM_STR);
+            $query->bindParam(':FirstName', $FirstName, PDO::PARAM_STR );
+            $query->bindParam(':Age', $age, PDO::PARAM_INT);
+            $query->bindParam(':Email', $email, PDO::PARAM_STR);
+            $query->bindParam(':Status', $status, PDO::PARAM_INT);
+            $query->bindParam(':catDist', $catDist, PDO::PARAM_INT);
+            $query->bindParam(':catTDV', $catTDV, PDO::PARAM_INT);
+            $query->bindParam(':catVolt', $catVolt, PDO::PARAM_INT);
+
+            // On éxecute la requête
+            $query->execute();
+
+            // On récupère le dernier id inséré en bd (fonction lastInsertId)
+            $last_id = $dbh->lastInsertId();
+
+            //   //POPUP DE RETOUR
+            if($last_id) {
+                echo '<script>
+                    overlay1.style.visibility = "hidden";
+                    overlay1.style.opacity = "0";
+                    overlay3.style.visibility = "visible";
+                    overlay3.style.opacity = "1";
+                </script>';
+            } 
+        }
+    ?>
 </HTML>
