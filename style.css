@@ -232,20 +232,44 @@ iframe {
 
 .flex-row img {
     height: 8vw;
-    margin: 1vw;
+    margin: 1vw 2vw;
 }
 
 .flex-column {
     display: flex;
     flex-direction: column;
     text-align: center;
+    margin: 1vw;
 }
 
 .flex-column img {
-    height: 3vw;
+    max-width: 100%;
+    max-height: 100%;
+    align-items: center;
+    justify-content: space-between;
 }
 
 /* FORMULAIRE  */
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 70%);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 4;
+}
+  
+.popup {
+    position: relative;
+    border-radius: 5px;
+    margin: 5% auto;
+    padding: 5%;
+}
 
 .inscription{
     width: 750px;
@@ -319,10 +343,6 @@ input[type="checkbox"]{
     width: 32px;
     height: 32px;
     outline: solid black 1px;
-}
-
-input{
-    
 }
 
 label{
@@ -418,4 +438,3 @@ footer div {
     display: flex;
     flex-direction: column;
 }
-

@@ -124,7 +124,7 @@ if(isset($_POST['valider'])) {
         </section>
         <section class="bouton-inscription">
             <div><img src="assets/avions&icones/avion2.svg" alt="avion en papier rouge"></div>
-            <button>INSCRIPTION</button>
+            <button id="boutonInscription">INSCRIPTION</button>
         </section>
         <section class="infos">
             <div>
@@ -168,65 +168,50 @@ if(isset($_POST['valider'])) {
             </div>
             <div class="flex-column">
                 <img src="assets/partenaires/airfrance.jpg" alt="Air France">
-                <img src="assets/partenaires/aeroport.jpg" alt="Aéroport">
+                <img id="chambery" src="assets/partenaires/aeroport.jpg" alt="Aéroport">
             </div>
         </section>
-        <section class="inscription redBG ">
-          
-            <form class="formulaire" method="POST" action="index.php">
-
-                <div class="input">
-                    
-                      <input class="nom" type="text" name="nom" placeholder="NOM du PARTICIPANT......................................................................................................." required>
-                    
-
-                    <div>
-                      <input class="prenom" type="text" name="prenom" placeholder="PRENOM............................................................................................ "required><input class="age" type="text" name="age" placeholder="AGE........................" required>
+        <section id="target" class="overlay">
+            <div class="popup inscription redBG ">
+                <form class="formulaire" method="POST" action="index.php">
+                    <div class="input">
+                        <input class="nom" type="text" name="nom" placeholder="NOM du PARTICIPANT......................................................................................................." required>
+                        <div>
+                            <input class="prenom" type="text" name="prenom" placeholder="PRENOM............................................................................................ "required>
+                            <input class="age" type="text" name="age" placeholder="AGE........................" required>
+                        </div>
+                        <input class="email" type="text" name="email" placeholder="Adresse mail..................................................................................@..............................."required>
                     </div>
-                
-                  
-                      <input class="email" type="text" name="email" placeholder="Adresse mail..................................................................................@..............................."required>
-                  
-                </div>
-
-                <div class="checkbox">
-
-                  <div class="catDist">
-                    <input  type="checkbox" name="catDist" value="1"><label for="catDist">Catégorie “DISTANCE”</label>
-                  </div>
-
-                  <div class="catTDV">
-                    <input type="checkbox" name="catTDV" value="1"><label for="catTDV">Catégorie “TEMPS DE VOL”</label>
-                  </div>
-
-                  <div class="catVolt">
-                    <input type="checkbox" name="catVolt" value="1"><label for="catVolt">Catégorie “VOLTIGE”</label>
-                  </div>
-
-                  <div class="autoMail">
-                    <input type="checkbox" name="autoMail"><label for="autoMail">Rappel automatique par mail</label>
-                  </div>
-
-                  <div class="CGU">
-                    <input type="checkbox" name="CGU" required='required'><label for="CGU" >j’accepte les  <a href="./CGU.html" target="_blank">Conditions générales d'utilisation </a> </label>
-                  </div>
-
-                </div>
-
-               
-                  <img class="image" src="./assets/avions&icones/avion1.svg" alt="avion en papier">
-                
-
-                <div class="button">
-                  <button id="retour" type="submit" name="retour">RETOUR</button>
-
-                  <button class="valider" type="submit" name="valider">VALIDER</button>
-                </div>
-
-            </form>
-          
-
-</section>
+                    <div class="checkbox">
+                        <div class="catDist">
+                            <input  type="checkbox" name="catDist" value="1">
+                            <label for="catDist">Catégorie “DISTANCE”</label>
+                        </div>
+                        <div class="catTDV">
+                            <input type="checkbox" name="catTDV" value="1">
+                            <label for="catTDV">Catégorie “TEMPS DE VOL”</label>
+                        </div>
+                        <div class="catVolt">
+                            <input type="checkbox" name="catVolt" value="1">
+                            <label for="catVolt">Catégorie “VOLTIGE”</label>
+                        </div>
+                        <div class="autoMail">
+                            <input type="checkbox" name="autoMail">
+                            <label for="autoMail">Rappel automatique par mail</label>
+                        </div>
+                        <div class="CGU">
+                            <input type="checkbox" name="CGU" required='required'>
+                            <label for="CGU" >J’accepte les <a href="./CGU.html" target="_blank">Conditions générales d'utilisation </a></label>
+                        </div>
+                    </div>
+                    <img class="image" src="./assets/avions&icones/avion1.svg" alt="avion en papier">
+                    <div class="button">
+                        <button id="retour" type="submit" name="retour">RETOUR</button>
+                        <button class="valider" type="submit" name="valider">VALIDER</button>
+                    </div>
+                </form>
+            </div>
+        </section>
         <footer class="blackBG">
             <div>
                 <a href=#>Configuration des cookies</a>
@@ -243,17 +228,24 @@ if(isset($_POST['valider'])) {
             </div>
         </footer>
     </body>
-              
-  </section>
-          <footer>footer</footer>
 
           <script>
-            let retour = document.getElementById('retour');
-            function goodBye() {
-            alert("Désolé de vous voir partir");
+
+            let boutonInscription = document.getElementById("boutonInscription");
+            let overlay = document.querySelector(".overlay");
+            boutonInscription.addEventListener("click", () => {
+                overlay.style.visibility = "visible";
+                overlay.style.opacity = "1";
             }
-            retour.addEventListener("click", goodBye);
+
+            )
+            // let retour = document.getElementById('retour');
+            // function goodBye() {
+            // alert("Désolé de vous voir partir");
+            // }
+            // retour.addEventListener("click", goodBye);
           </script>
       </body>
+
     
 </HTML>
