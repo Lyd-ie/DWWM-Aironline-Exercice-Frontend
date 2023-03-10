@@ -7,7 +7,7 @@ const minute = document.getElementById("minutes");
 const secondes = document.getElementById("seconds");
 
 // Set the date and time to count down to
-let countDownDate = new Date("April 16, 2023 10:00:00").getTime();
+let countDownDate = new Date("April 16, 2023 11:00:00").getTime();
 
 // Update the countdown every second
 let countdownInterval = setInterval(function() {

@@ -39,6 +39,14 @@ a:hover {
     text-decoration: underline;
 }
 
+button {
+    font-family: "Open Sans Condensed Bold";
+}
+
+button:hover, .logos img:hover{
+    cursor: pointer;
+}
+
 h1, h2, h3 {
     font-family: "Open Sans Condensed Bold";
     font-weight: 300;
@@ -87,7 +95,7 @@ h1, h2, h3 {
     padding-bottom: 0.5vw;
 }
 
-.decollage h4 {
+.decollage h4, .decollage p {
     color: #D21242;
     font-family: 'Open Sans', 'Source Sans Pro', sans-serif;
     font-weight: 700;
@@ -96,8 +104,6 @@ h1, h2, h3 {
 
 .decollage p {
     color: white;
-    font-family: 'Open Sans', 'Source Sans Pro', sans-serif;
-    font-weight: 700;
     font-size: 0.8vw;
 }
 
@@ -137,7 +143,6 @@ h1, h2, h3 {
 }
 
 .disciplines div {
-    background-color: white;
     width: 23vw;
     padding: 2vw 2vw 3vw;
     margin: 2% 3%;
@@ -167,19 +172,10 @@ h1, h2, h3 {
     width: 15vw;
 }
 
-button {
-    font-family: "Open Sans Condensed Bold";
-}
-
-button:hover {
-    cursor: pointer;
-}
-
 .bouton-inscription button {
     padding: 1vw;
     border-radius: 33px;
     width: 11vw;
-    font-family: "Open Sans Condensed Bold";
     font-size : 1.5vw;
     color: white;
     background-color: #D21242;
@@ -205,6 +201,41 @@ button:hover {
 .infos div {
     margin: 0 auto;
     width: 28vw;
+}
+
+table {
+    margin-left: 0.9vw;
+    text-align: right;
+    width: 76%;
+    border-collapse: collapse;
+}
+
+td {
+    padding-bottom: 0.3vh;
+    vertical-align: middle;
+}
+
+.icone img {
+    width: 1.1vw;
+    padding-right: 1.5vw;
+}
+
+.route, .duree {
+    font-weight: 900;
+    font-size: 0.95vw;
+}
+
+.route {
+    text-align: left;
+}
+
+.duree {
+    color: #318E4E;
+}
+
+.distance {
+    font-size: 0.95vw;
+    color:#585858;
 }
 
 .infos p {
@@ -250,15 +281,13 @@ iframe {
     text-transform: uppercase;
 }
 
-/* PARTENAIRES */
-
-.partenaires {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+.vignettes a {
+    color: black;
 }
 
-.flex-row {
+/* PARTENAIRES */
+
+.partenaires, .flex-row {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -272,15 +301,14 @@ iframe {
 .flex-column {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     text-align: center;
     margin: 1vw;
 }
 
 .flex-column img {
-    max-width: 100%;
-    max-height: 100%;
-    align-items: center;
-    justify-content: space-between;
+    max-width: 95%;
+    max-height: 95%;
 }
 
 /* FORMULAIRE  */
@@ -345,7 +373,7 @@ iframe {
 }
 
 .age {
-    margin-right: 0.5;
+    margin-right: 0.5vw;
     width: 30%;
 }
 
