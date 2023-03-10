@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -9,8 +7,8 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-        <link type="text/css" rel="stylesheet" href="style.css">
         <link rel="shortcut icon" href="assets/logos_aironline/logo2_fond_noir.svg" type="image/x-icon">
+        <link type="text/css" rel="stylesheet" href="style.css">
     </head>
     <body>
         <section class="header">
@@ -23,7 +21,7 @@
                 <img src="assets/logos_aironline/nom_de_levent.svg" alt="Paperwings Championship by AirOnline">
             </div>
             <div class="decollage blackBG">
-                <h4>DECOLLAGE DANS</h4>
+                <h4>DÉCOLLAGE DANS</h4>
                 <div id="countdown">
                     <div class="jours"> 
                         <div id="days"></div>
@@ -64,15 +62,52 @@
                     <P>Si tu as un talent secret pour les acrobaties aériennes ça nous intéresse ! Pour cette compétition, tu as trois essais devant les juges qui t’accorderons une note artistique. Seule la plus haute des trois notes est retenue Fais preuve de créativité avec tes avions et figures. Les pilotes  qui recevront le plus de votes des juges accéderont à la finale nationale.</p>
                     <P>Peux-tu faire mieux que la dernière championne, Caro ?</p>
                 </div>
+            </div>
         </section>
-        <section class="bouton-inscription">
-            <div><img src="assets/avions&icones/avion2.svg" alt="avion en papier rouge"></div>
+        <div class="bouton-inscription">
+            <div>
+                <img src="assets/avions&icones/avion2.svg" alt="avion en papier rouge">
+            </div>
             <button id="boutonInscription">INSCRIPTION</button>
-        </section>
+        </div>
         <section class="infos">
             <div>
                 <h3>TRANSPORT</h3>
-                <img src="assets/transport.jpg">
+                <img src="assets/transport.jpg" alt="informations des transports en commun">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td class="icone"><img src="assets/avions&icones/voiture.png" alt="icone de voiture"></td>
+                            <td class="route">via A43</td>
+                            <td class="duree">habituellement 10-14 min</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td class="distance">8,0 km</td>
+                        </tr>
+                        <tr>
+                            <td class="icone"><img src="assets/avions&icones/voiture.png" alt="icone de voiture"></td>
+                            <td class="route">via A43</td>
+                            <td class="duree">habituellement 14 min</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td class="distance">6,5 km</td>
+                        </tr>
+                        <tr>
+                            <td class="icone"><img src="assets/avions&icones/voiture.png" alt="icone de voiture"></td>
+                            <td class="route">via D201</td>
+                            <td class="duree">habituellement 12-16 min</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td class="distance">7,0 km</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             <div>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2794.9895402699312!2d5.95657511576848!3d45.53041603704324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478baeadf7664831%3A0x777d29b04260c513!2s110%20Rue%20des%20Tenettes%2C%2073190%20Saint-Baldoph!5e0!3m2!1sfr!2sfr!4v1678103364074!5m2!1sfr!2sfr" width="500" height="500" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -88,21 +123,21 @@
                 <p>Toute sortie est définitive</p>
             </div>            
         </section>
-        <section class="vignettes redBG">
+        <div class="vignettes redBG">
             <div class="whiteBG">
-                <a href="https://ikonal.com/plans-avions-papier" alt="comment faire un avion en papier" target="_blank"><img src="assets/vignette1.jpg" alt="un avion en papier"></a>
-                <p>12 plans pour réussir son avion en papier</p>
+                <a href="https://ikonal.com/plans-avions-papier" title="comment faire un avion en papier" target="_blank"><img src="assets/vignette1.jpg" alt="un avion en papier">
+                <p>12 plans pour réussir son avion en papier</p></a>
             </div>
             <div class="whiteBG">
-                <a href="https://youtu.be/OHwuee3q8fg" alt="record du monde vol d'avion en papier" target="_blank"><img src="assets/vignette2.jpg" alt="vignette vidéo youtube"></a>
-                <p>How John Collins Broke the Longest Paper Airplane Flight World Record</p>
+                <a href="https://youtu.be/OHwuee3q8fg" title="record du monde vol d'avion en papier" target="_blank"><img src="assets/vignette2.jpg" alt="vignette vidéo youtube">
+                <p>How John Collins Broke the Longest Paper Airplane Flight World Record</p></a>
             </div>
             <div class="whiteBG">
-                <a href="http://www.camillejourdain.fr/wp-content/uploads/2009/10/evasion_mode_d_emploi.pdf" alt="art du voyage immobile" target="_blank"><img src="assets/vignette3.jpg" alt="pliage d'un avion en papier"></a>
-                <p>L'art du voyage immobile</p>
+                <a href="http://www.camillejourdain.fr/wp-content/uploads/2009/10/evasion_mode_d_emploi.pdf" title="art du voyage immobile" target="_blank"><img src="assets/vignette3.jpg" alt="pliage d'un avion en papier">
+                <p>L'art du voyage immobile</p></a>
             </div>
-        </section>
-        <section class="partenaires redBG">
+        </div>
+        <div class="partenaires redBG">
             <div class="flex-row">
                 <img src="assets/partenaires/chinaexpress.jpg" alt="China Express">
                 <img src="assets/partenaires/clairefontaine.jpg" alt="Clairefontaine">
@@ -111,43 +146,43 @@
             </div>
             <div class="flex-column">
                 <img src="assets/partenaires/airfrance.jpg" alt="Air France">
-                <img id="chambery" src="assets/partenaires/aeroport.jpg" alt="Aéroport">
+                <img src="assets/partenaires/aeroport.jpg" alt="Aéroport">
             </div>
-        </section>
-        <section>
-            <div id="target" class="overlay1">
+        </div>
+        <div>
+            <div class="overlay1">
                 <div class="popup inscription redBG ">
                     <form class="formulaire" method="POST" action="index.php">
                         <div class="input">
                             <input class="text" type="text" name="nom" placeholder="NOM du PARTICIPANT......................................................................................................." required>
                             <div class="prenom-age">
-                                <input class="text" type="text" name="prenom" placeholder="PRENOM............................................................................................ "required>
-                                <input class="age" type="text" name="age" placeholder="AGE........................" required>
+                                <input class="text" type="text" name="prenom" placeholder="PRENOM............................................................................................ " required>
+                                <input class="age" type="text" name="age" placeholder="AGE........................"  required>
                             </div>
-                            <input class="text" type="text" name="email" placeholder="Adresse mail............................................................@..............................."required>
+                            <input class="text" type="text" name="email" placeholder="Adresse mail............................................................@..............................." required>
                         </div>
                         <div class="checkbox-img">
                             <div class="checkbox">
                                 <div class="catDist">
-                                    <input  type="checkbox" name="catDist" value="1">
+                                    <input id="catDist" type="checkbox" name="catDist" value="1">
                                     <label for="catDist">Catégorie “DISTANCE”</label>
                                 </div>
                                 <div class="catTDV">
-                                    <input type="checkbox" name="catTDV" value="1">
+                                    <input id="catTDV" type="checkbox" name="catTDV" value="1">
                                     <label for="catTDV">Catégorie “TEMPS DE VOL”</label>
                                 </div>
                                 <div class="catVolt">
-                                    <input type="checkbox" name="catVolt" value="1">
+                                    <input id="catVolt" type="checkbox" name="catVolt" value="1">
                                     <label for="catVolt">Catégorie “VOLTIGE”</label>
                                 </div>
                                 <div></div>
                                 <div class="autoMail">
-                                    <input type="checkbox" name="autoMail">
+                                    <input id="autoMail" type="checkbox" name="autoMail" value="1">
                                     <label for="autoMail">Rappel automatique par mail</label>
                                 </div>
                                 <div></div>
                                 <div class="CGU">
-                                    <input type="checkbox" name="CGU" value="4" required>
+                                    <input id="CGU" type="checkbox" name="CGU" required>
                                     <label for="CGU" >J’accepte les <a href="./CGU.html" target="_blank">Conditions d'utilisation </a></label>
                                 </div>
                             </div>
@@ -179,7 +214,7 @@
                     <img src="assets/avions&icones/avion3.svg" alt="avion en papier blanc">
                 </div>
             </div>
-        </section>
+        </div>
         <footer class="blackBG">
             <div>
                 <a>Configuration des cookies</a>
@@ -193,8 +228,8 @@
             </div>
             <img src="assets/avions&icones/avion2.svg" alt="avion en papier rouge">
         </footer>
+        <script src="main.js"></script>
     </body>
-    <script src="main.js" type="text/javascript"></script>
     <?php 
         // Configuration de la connexion
         define('DB_HOST','localhost');
@@ -218,7 +253,7 @@
             // On récupère le nom saisi par le lecteur
             $name = $_POST['nom'];
 
-            // ON recupere les options choisis
+            // ON recupere les options choisies
             $catDist = '0';
             if(isset($_POST['catDist'])) {
                 $catDist = $_POST['catDist'];
@@ -228,10 +263,17 @@
             if(isset($_POST['catTDV'])) {
                 $catTDV = $_POST['catTDV'];
             }
+
             $catVolt = '0';
             if(isset($_POST['catVolt'])) {
                 $catVolt = $_POST['catVolt'];
             }
+
+            $autoMail = '0';
+            if(isset($_POST['autoMail'])) {
+                $autoMail = $_POST['autoMail'];
+            }
+
             // On récupère le prenom du lecteur
             $FirstName = $_POST['prenom'];
 
@@ -245,8 +287,8 @@
             $status = 1;
 
             // On prépare la requête d'insertion en base de données de toutes ces valeurs dans la table tblreaders
-            $query = $dbh->prepare("INSERT INTO inscription(LastName, FirstName, Age, Email, Status, catDist, catTDV, catVolt)
-                                    VALUES (:LastName, :FirstName, :Age, :Email, :Status, :catDist, :catTDV, :catVolt)");
+            $query = $dbh->prepare("INSERT INTO inscription(LastName, FirstName, Age, Email, Status, catDist, catTDV, catVolt, autoMail)
+                                    VALUES (:LastName, :FirstName, :Age, :Email, :Status, :catDist, :catTDV, :catVolt, :autoMail)");
 
             // On bind les paramètres
             $query->bindParam(':LastName', $name, PDO::PARAM_STR);
@@ -257,6 +299,7 @@
             $query->bindParam(':catDist', $catDist, PDO::PARAM_INT);
             $query->bindParam(':catTDV', $catTDV, PDO::PARAM_INT);
             $query->bindParam(':catVolt', $catVolt, PDO::PARAM_INT);
+            $query->bindParam(':autoMail', $autoMail, PDO::PARAM_INT);
 
             // On éxecute la requête
             $query->execute();
