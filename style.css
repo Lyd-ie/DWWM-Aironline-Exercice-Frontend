@@ -80,7 +80,7 @@ h1, h2, h3 {
     padding-bottom: 1vw;
 }
 
-.decollage p {
+.decollage h4 {
     color: #D21242;
     font-size: 2vw;
     font-weight: 700;
@@ -319,10 +319,6 @@ input[type="checkbox"]{
     width: 32px;
     height: 32px;
     outline: solid black 1px;
-}
-
-input{
-    
 }
 
 label{

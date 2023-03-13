@@ -84,10 +84,11 @@ if(isset($_POST['valider'])) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> 
         <link type="text/css" rel="stylesheet" href="style.css">
+        <link type="text/css" rel="stylesheet" href="flipdown.css">
         <link rel="shortcut icon" href="" type="image/x-icon">
     </head>
     <body>
-        <section class="header">
+    <section class="header">
             <img class="AO" src="assets/logos_aironline/logo2_fond_noir.svg" alt="logo Aironline">
             <div class="logos">
                 <img src="assets/avions&icones/facebook.svg" alt="logo Facebook">
@@ -96,10 +97,11 @@ if(isset($_POST['valider'])) {
             <div class="page-title">
                 <img src="assets/logos_aironline/nom_de_levent.svg" alt="Paperwings Championship by AirOnline">
             </div>
-            <div class="decollage blackBG">
-                <p>DECOLLAGE DANS</p>
-                <div class="countdown">COMPTE A REBOURS ICI</div>
+            <div class="decollage blackBG timer example">
+                <h1>DECOLLAGE DANS</h1>
+                <div id="flipdown" class="countdown flipdown"></div>
             </div>
+            
         </section>
         <section>
             <div class="disciplines-title blackBG">
@@ -246,7 +248,7 @@ if(isset($_POST['valider'])) {
               
   </section>
           <footer>footer</footer>
-
+         
           <script>
             let retour = document.getElementById('retour');
             function goodBye() {
@@ -254,6 +256,7 @@ if(isset($_POST['valider'])) {
             }
             retour.addEventListener("click", goodBye);
           </script>
+          <script src="flipdown.js"></script>
       </body>
     
 </HTML>
