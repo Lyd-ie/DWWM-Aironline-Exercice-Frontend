@@ -43,7 +43,7 @@ button {
     font-family: "Open Sans Condensed Bold";
 }
 
-button:hover, .logos img:hover{
+button:hover, .logos img:hover, footer a:hover{
     cursor: pointer;
 }
 
@@ -500,5 +500,33 @@ footer img {
     width: 20%;
 }
 
-/* FLIPCLOCK */
+/* ANIMATION */
 
+.fond-noir {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+}
+
+.animation img {
+    position: absolute;
+    top: 3vw;
+    left: 15vw;
+    display: block;
+    width: 70vw;
+}
+
+.still {
+    display: none;
+}
+
+.still img {
+    width: 70vw;
+    position: absolute;
+    top: 3vw;
+    left: 15vw;
+    z-index: 1;
+}

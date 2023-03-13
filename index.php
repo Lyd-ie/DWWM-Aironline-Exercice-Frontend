@@ -232,6 +232,21 @@
             <img src="assets/avions&icones/avion2.svg" alt="avion en papier rouge">
         </footer>
         <script src="main.js"></script>
+        <!-- <script>
+            let animationDiv = document.querySelector(".fond-noir");
+            let animation = document.querySelector(".animation");
+ 
+            window.onload = () => {
+                animation.style.display = "block";
+
+                const timeout = setTimeout(logo, 2050);
+                function logo() {
+                    // animation.style.display = "block";
+                    // animationDiv.style.display = "none";
+                    location.href = "localhost/online_formapro/projet_aironline/index.php";
+                }
+            }
+        </script> -->
     </body>
     <?php 
         // Configuration de la connexion

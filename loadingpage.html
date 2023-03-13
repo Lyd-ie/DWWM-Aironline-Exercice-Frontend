@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="cache-control" content="no-cache" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="-1" />
+        <title>AIR ONLINE - Paper Wings Championship</title>
+        <link rel="shortcut icon" href="assets/logos_aironline/logo2_fond_noir.svg" type="image/x-icon">
+        <link type="text/css" rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <script>window.addEventListener( "pageshow", function ( event ) {
+            var historyTraversal = event.persisted || 
+                                   ( typeof window.performance != "undefined" && 
+                                        window.performance.navigation.type === 2 );
+            if ( historyTraversal ) {
+              // Handle page restore.
+              window.location.reload();
+            }
+          });
+            </script>
+        <div class="fond-noir">
+            <div class="animation"></div>
+            <div class="still"></div>
+            
+        <script>
+
+            let animationDiv = document.querySelector(".fond-noir");
+            let animation = document.querySelector(".animation");
+            let still = document.querySelector(".still");
+            window.onload = () => {
+                animation.innerHTML = '<img src="assets/animation.gif" alt="un avion en papier qui vole sur le logo AO">';
+                still.innerHTML = '<img  src="assets/animation-stop.jpg" alt="un avion en papier posé sur le logo AO">';
+
+                setTimeout(logoStop, 1950);
+                setTimeout(pageChange, 2500);
+
+                function logoStop() {
+                    still.style.display = "block";
+                    // animation.style.display = "none";
+                }
+
+                function pageChange() {
+                    animation.innerHTML = "";
+                    still.innerHTML = "";
+                    location.href = "http://localhost/online_formapro/projet_aironline/index.php";
+                }
+            }
+        </script>
+    </body>
+</html>
