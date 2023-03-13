@@ -321,40 +321,7 @@
 
             // On éxecute la requête
             $query->execute();
-
-
-</section>
-        <footer class="blackBG">
-            <div>
-                <a href=#>Configuration des cookies</a>
-                <a href=#>Politique de confidentialité</a>
-                <a href=#>Mentions légales</a>
-            </div>
-            <div>
-                <a href=#>Contactez-nous</a>
-                <a href=#>Conditions Générales</a>
-                <a href=#>Médias</a>
-            </div>
-            <div>
-                <img src="assets/avions&icones/avion2.svg" alt="avion en papier rouge">
-            </div>
-        </footer>
-    </body>
-              
-  </section>
-          <footer>footer</footer>
-         
-          <script>
-            let retour = document.getElementById('retour');
-            function goodBye() {
-            alert("Désolé de vous voir partir");
-            }
-            retour.addEventListener("click", goodBye);
-          </script>
-          <script src="flipdown.js"></script>
-      </body>
     
-
             // On récupère le dernier id inséré en bd (fonction lastInsertId)
             $last_id = $dbh->lastInsertId();
 
