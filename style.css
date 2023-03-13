@@ -95,7 +95,9 @@ h1, h2, h3 {
     padding-bottom: 0.5vw;
 }
 
+
 .decollage h4, .decollage p {
+
     color: #D21242;
     font-family: 'Open Sans', 'Source Sans Pro', sans-serif;
     font-weight: 700;
@@ -356,6 +358,13 @@ iframe {
     margin-bottom: 4%;
 }
 
+
+label{
+    font-size: 16px;
+    margin-left: 11px;
+    padding-bottom: 2px;
+    color: white;
+
 .prenom-age {
     display: flex;
     flex-direction: row;
@@ -370,6 +379,7 @@ iframe {
     padding: 0.8vw;
     font-size: 1.1vw;
     border: solid black 1px;
+
 }
 
 .age {

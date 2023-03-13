@@ -9,9 +9,10 @@
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
         <link rel="shortcut icon" href="assets/logos_aironline/logo2_fond_noir.svg" type="image/x-icon">
         <link type="text/css" rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" href="" type="image/x-icon">
     </head>
     <body>
-        <section class="header">
+    <section class="header">
             <img class="AO" src="assets/logos_aironline/logo2_fond_noir.svg" alt="logo Aironline">
             <div class="logos">
                 <img src="assets/avions&icones/facebook.svg" alt="logo Facebook">
@@ -20,6 +21,7 @@
             <div class="page-title">
                 <img src="assets/logos_aironline/nom_de_levent.svg" alt="Paperwings Championship by AirOnline">
             </div>
+
             <div class="decollage blackBG">
                 <h4>DÉCOLLAGE DANS</h4>
                 <div id="countdown">
@@ -41,6 +43,7 @@
                     </div>
                 </div>
             </div>
+            
         </section>
         <section>
             <div class="disciplines-title blackBG">
@@ -304,6 +307,39 @@
             // On éxecute la requête
             $query->execute();
 
+
+</section>
+        <footer class="blackBG">
+            <div>
+                <a href=#>Configuration des cookies</a>
+                <a href=#>Politique de confidentialité</a>
+                <a href=#>Mentions légales</a>
+            </div>
+            <div>
+                <a href=#>Contactez-nous</a>
+                <a href=#>Conditions Générales</a>
+                <a href=#>Médias</a>
+            </div>
+            <div>
+                <img src="assets/avions&icones/avion2.svg" alt="avion en papier rouge">
+            </div>
+        </footer>
+    </body>
+              
+  </section>
+          <footer>footer</footer>
+         
+          <script>
+            let retour = document.getElementById('retour');
+            function goodBye() {
+            alert("Désolé de vous voir partir");
+            }
+            retour.addEventListener("click", goodBye);
+          </script>
+          <script src="flipdown.js"></script>
+      </body>
+    
+
             // On récupère le dernier id inséré en bd (fonction lastInsertId)
             $last_id = $dbh->lastInsertId();
 
@@ -318,4 +354,5 @@
             } 
         }
     ?>
+
 </HTML>
