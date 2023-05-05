@@ -9,7 +9,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
         <link rel="shortcut icon" href="assets/logos_aironline/logo2_fond_noir.svg" type="image/x-icon">
         <link type="text/css" rel="stylesheet" href="style.css">
-        <link rel="shortcut icon" href="" type="image/x-icon">
     </head>
     <body>
     <section class="header">
@@ -21,7 +20,7 @@
             <div class="page-title">
                 <img src="assets/logos_aironline/nom_de_levent.svg" alt="Paperwings Championship by AirOnline">
             </div>
-
+            <!-- COMPTE A REBOURS -->
             <div class="decollage blackBG">
                 <h4>DÉCOLLAGE DANS</h4>
                 <div id="countdown">
@@ -43,7 +42,6 @@
                     </div>
                 </div>
             </div>
-            
         </section>
         <section>
             <div class="disciplines-title blackBG">
@@ -67,6 +65,7 @@
                 </div>
             </div>
         </section>
+        <!-- BOUTON INSCRIPTION -->
         <div class="bouton-inscription">
             <div>
                 <img src="assets/avions&icones/avion2.svg" alt="avion en papier rouge">
@@ -152,6 +151,7 @@
                 <img src="assets/partenaires/aeroport.jpg" alt="Aéroport">
             </div>
         </div>
+        <!-- POP-UP FORMULAIRE -->
         <div>
             <div class="overlay1">
                 <div class="popup inscription redBG ">
@@ -232,21 +232,6 @@
             <img src="assets/avions&icones/avion2.svg" alt="avion en papier rouge">
         </footer>
         <script src="main.js"></script>
-        <!-- <script>
-            let animationDiv = document.querySelector(".fond-noir");
-            let animation = document.querySelector(".animation");
- 
-            window.onload = () => {
-                animation.style.display = "block";
-
-                const timeout = setTimeout(logo, 2050);
-                function logo() {
-                    // animation.style.display = "block";
-                    // animationDiv.style.display = "none";
-                    location.href = "localhost/online_formapro/projet_aironline/index.php";
-                }
-            }
-        </script> -->
     </body>
     <?php 
         // Configuration de la connexion
@@ -257,21 +242,21 @@
 
         try
         {
-            // Connexion a la base
+            // Connexion à la base
             $dbh = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME,DB_USER, DB_PASS);
         }
         catch (PDOException $e)
         {
-            // Echec de la connexion
+            // si échec de la connexion
             exit("Error: " . $e->getMessage());
         }
 
         if(isset($_POST['valider'])) {
 
-            // On récupère le nom saisi par le lecteur
+            // On récupère le nom saisi par l'utilisateur
             $name = $_POST['nom'];
 
-            // ON recupere les options choisies
+            // ON récupère les options choisies
             $catDist = '0';
             if(isset($_POST['catDist'])) {
                 $catDist = $_POST['catDist'];
@@ -292,23 +277,21 @@
                 $autoMail = $_POST['autoMail'];
             }
 
-            // On récupère le prenom du lecteur
+            // On récupère le prénom de l'utilisateur
             $FirstName = $_POST['prenom'];
 
-            // On récupère l'age du lecteur
+            // On récupère l'âge de l'utilisateur
             $age = $_POST['age'];
 
-            // On récupère l'email
+            // On récupère l'email de l'utilisateur
             $email = $_POST['email'];
 
-            // On fixe le statut du lecteur à 1 par défaut (actif)
+            // On fixe le statut de l'utilisateur à 1 par défaut (actif)
             $status = 1;
 
             // On prépare la requête d'insertion en base de données de toutes ces valeurs dans la table tblreaders
             $query = $dbh->prepare("INSERT INTO inscription(LastName, FirstName, Age, Email, Status, catDist, catTDV, catVolt, autoMail)
                                     VALUES (:LastName, :FirstName, :Age, :Email, :Status, :catDist, :catTDV, :catVolt, :autoMail)");
-
-            // On bind les paramètres
             $query->bindParam(':LastName', $name, PDO::PARAM_STR);
             $query->bindParam(':FirstName', $FirstName, PDO::PARAM_STR );
             $query->bindParam(':Age', $age, PDO::PARAM_INT);
@@ -318,15 +301,13 @@
             $query->bindParam(':catTDV', $catTDV, PDO::PARAM_INT);
             $query->bindParam(':catVolt', $catVolt, PDO::PARAM_INT);
             $query->bindParam(':autoMail', $autoMail, PDO::PARAM_INT);
-
-            // On éxecute la requête
             $query->execute();
     
             // On récupère le dernier id inséré en bd (fonction lastInsertId)
             $last_id = $dbh->lastInsertId();
 
-            //   //POPUP DE RETOUR
-            if($last_id) {
+            // POPUP DE RETOUR
+            if ($last_id) {
                 echo '<script>
                     overlay1.style.visibility = "hidden";
                     overlay1.style.opacity = "0";
@@ -336,5 +317,4 @@
             } 
         }
     ?>
-
 </HTML>

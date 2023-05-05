@@ -1,30 +1,28 @@
 // COMPTE A REBOURS //
-
 const countdown = document.getElementById("countdown");
 const jours = document.getElementById("days");
 const heures = document.getElementById("hours");
 const minute = document.getElementById("minutes");
 const secondes = document.getElementById("seconds");
+// fixe l'échéance du compte à rebours
+let countDownDate = new Date("Agust 16, 2023 10:00:00").getTime();
 
-// Set the date and time to count down to
-let countDownDate = new Date("April 16, 2023 11:00:00").getTime();
-
-// Update the countdown every second
+// Timer mettant à jour le compte à rebours chaque seconde
 let countdownInterval = setInterval(function() {
 
-    // Get the current date and time
+    // Récupère la date et l'heure actuelles
     let now = new Date().getTime();
 
-    // Calculate the time remaining
+    // Calcul du temps restant avant échéance
     let timeRemaining = countDownDate - now;
 
-    // Calculate days, hours, minutes, and seconds remaining
+    // Calcul des différentes valeurs de durées à afficher
     var days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
     var hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
-    // Display the countdown in the element with ID "countdown"
+    // Affichage des valeurs
     jours.innerHTML = days;
     if (jours.innerHTML < 10) {
         jours.innerHTML = "0"+ days;
@@ -42,7 +40,7 @@ let countdownInterval = setInterval(function() {
         secondes.innerHTML = "0"+ seconds;
     }
 
-    // If the countdown is over, stop the interval and display a message
+    // Comportement de fin du compte à rebours
     if (timeRemaining < 0) {
         clearInterval(countdownInterval);
         jours.innerHTML = "0";
